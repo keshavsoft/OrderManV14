@@ -1,4 +1,3 @@
-import { initCreate, initShowTable, initTableWithFooter } from "/KSTableAi/V6/entry.js";
 import onSuccessFunc from "./onSuccess.js";
 
 const afterHeadSave = async (inPk) => {
@@ -8,14 +7,10 @@ const afterHeadSave = async (inPk) => {
     configJson.endPoints.findFromParams = configJson.endPoints.findFromParams.replace("{pk}", inPk);
     configJson.callbacks.vertical.onSuccess = onSuccessFunc;
 
-    // await initCreate(configJson);
-
     if (window.KSTable) {
         console.log("table loaded from cdn");
 
         await window.KSTable.initCreate(configJson);
-    } else {
-        await initCreate(configJson);
     };
 
     const configForSubTable = await fetch("Index/Configs/AddItem/configForSubTable.json");
@@ -32,10 +27,7 @@ const afterHeadSave = async (inPk) => {
         console.log("table loaded from cdn");
 
         await window.KSTable.initTableWithFooter(configForSubTableJson);
-    } else {
-        await initTableWithFooter(configForSubTableJson);
     };
-    // await initTableWithFooter(configForSubTableJson);
 };
 
 export default afterHeadSave;
