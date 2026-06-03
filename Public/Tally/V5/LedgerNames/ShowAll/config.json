@@ -24,15 +24,16 @@
     },
     "columnsConfig": [
         {
-            "columnName": "Date",
+            "columnName": "LedgerName",
             "cellConfig": {
-                "width": "50px"
+                "width": "150px"
             },
             "isSearchable": false,
             "dataListSource": "Dates.Date"
         },
         {
-            "columnName": "AccountName",
+            "columnName": "LedgerParentName",
+            "title": "Parent Name",
             "cellConfig": {
                 "width": "100px"
             },
@@ -40,37 +41,18 @@
             "dataListSource": "AccountNames.AccountName"
         },
         {
-            "columnName": "Description",
+            "columnName": "GstRegistrationType",
+            "title": "Registration Type",
             "cellConfig": {
-                "width": "150px"
+                "width": "100px"
             }
         },
         {
-            "columnName": "Credit",
+            "columnName": "PartyGSTIN",
+            "title": "GSTIN",
             "cellConfig": {
-                "width": "50px",
-                "rightAlign": true,
-                "showThousandsSeperator": true,
-                "tableFooter": {
-                    "showTotal": true,
-                    "showBalance": true,
-                    "evalBalance": "Credit-Debit",
-                    "showBalanceIfPositive": true
-                }
-            }
-        },
-        {
-            "columnName": "Debit",
-            "cellConfig": {
-                "width": "50px",
-                "rightAlign": true,
-                "showThousandsSeperator": true,
-                "tableFooter": {
-                    "showTotal": true,
-                    "showBalance": true,
-                    "evalBalance": "Debit-Credit",
-                    "showBalanceIfPositive": true
-                }
+                "width": "100px",
+                "tableFooter": {}
             }
         }
     ]
