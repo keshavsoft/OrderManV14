@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file=.env app.js"
+    "start": "node --env-file=.env app.js",
+    "pkg": "npx @yao-pkg/pkg app.js --targets node24-win-x64"
   },
   "author": "",
   "license": "ISC",
