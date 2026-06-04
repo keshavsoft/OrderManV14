@@ -64,8 +64,14 @@
       "showInUi": true
     },
     {
+      "columnName": "Amount",
+      "title": "Amount",
+      "isRequired": false
+    },
+    {
       "field": "Amount",
       "title": "Amount",
+      "columnName": "Amount",
       "unique": false,
       "type": "number",
       "isNumber": true,
@@ -77,6 +83,15 @@
       "WidthOptions": {
         "inPx": 250
       },
+      "cellConfig": {
+        "width": "100px",
+        "rightAlign": true,
+        "tableFooter": {
+          "showTotal": true
+        }
+      },
+      "onKeyDown": true,
+      "onKeyDownType": "Amount",
       "isConsider": true,
       "showInUi": false
     },

@@ -33,7 +33,8 @@ const buildHeader = () => {
                     "M8 12h8",
                     "M8 16h8"
                 ],
-                href: "../../V4/BillsTable/V4/Create/index.html",
+                href: "../../V7/BillsTable/index.html",
+                href5: "../../V4/BillsTable/V4/Create/index.html",
                 href4: "../../V3/BillsTable/V3/Create/index.html",
                 href3: "../../V3/BillsTable/V2/Create/index.html",
                 href2: "../../V1/BillsTable/V4/Create/index.html",
