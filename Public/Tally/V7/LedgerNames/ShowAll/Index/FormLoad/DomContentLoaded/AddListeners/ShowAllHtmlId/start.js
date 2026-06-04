@@ -2,7 +2,7 @@ import { clickFuncToRun } from "./clickFunc.js";
 
 const funcToRun = () => {
     const htmlElement = document.getElementById('ShowAllHtmlId');
-    debugger;
+    // debugger;
     htmlElement.addEventListener("click", (event) =>
         clickFuncToRun({ inCurrentTarget: event.currentTarget })
     );
