@@ -1,6 +1,6 @@
 {
     "title": {
-        "text": "Bill Create",
+        "text": "Bills",
         "htmlId": "htmlId"
     },
     "items": [
@@ -28,15 +28,14 @@
             ]
         },
         {
-            "text": "Transactions",
-            "id": "1",
+            "text": "ShowAll",
+            "id": "ShowAllHtmlId",
             "icon": [
                 "M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z",
                 "M14 2v6h6",
                 "M8 12h8",
                 "M8 16h8"
-            ],
-            "href": "../../Transactions/V7/Create/index.html"
+            ]
         },
         {
             "text": "ToTally",

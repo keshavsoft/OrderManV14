@@ -36,6 +36,6 @@
     "kschema-api-gen-routesjs": "^1.2.1",
     "kschema-fs-api-gen-actions": "^1.7.6",
     "tailwind-todo": "^1.5.9",
-    "tailwind-table-dom": "^1.1.6"
+    "tailwind-table-dom": "^3.11.2"
   }
 }

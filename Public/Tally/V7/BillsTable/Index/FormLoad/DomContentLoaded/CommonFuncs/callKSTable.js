@@ -3,7 +3,7 @@ const callInitTableWithFooter = async (config) => {
         return window.KSTable.initTableWithFooter(config);
     }
 
-    const { initTableWithFooter } = await import("/KSTable/v10/entry.js");
+    const { initTableWithFooter } = await import("/KSTable/v12/entry.js");
 
     return initTableWithFooter(config);
 };
@@ -13,7 +13,7 @@ const callInitCreate = async (config) => {
         return window.KSTable.initCreate(config);
     }
 
-    const { initCreate } = await import("/KSTable/v10/entry.js");
+    const { initCreate } = await import("/KSTable/v12/entry.js");
 
     return initCreate(config);
 };
