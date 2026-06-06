@@ -3,6 +3,8 @@ import { hookAllListeners } from "./AddListeners/start.js";
 import tallyStatus from "../../tallyStatus.js";
 
 const runAfterDomLoad = () => {
+    import("../../../script.js").then();
+
     buildHeader().then(fromPromise => {
         jFLocalDisplayNonetoTallyId();
 
