@@ -1,3 +1,5 @@
+import initHeader from "/header/v3/initHeader.js";
+
 const buildHeader = () => {
     const headerConfig = {
         items: [
@@ -54,8 +56,8 @@ const buildHeader = () => {
         ]
     };
 
-    window.KSHeader(headerConfig); // extension or CDN
-    // initHeader(headerConfig);
+    // window.KSHeader(headerConfig); // extension or CDN
+    initHeader(headerConfig);
     // callKSHeader(headerConfig).then();
 };
 
