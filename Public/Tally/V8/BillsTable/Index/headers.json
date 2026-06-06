@@ -17,7 +17,7 @@
             "text": "AddItem",
             "id": "AddItemHtmlId",
             "icon": [],
-            "svgName": "search"
+            "svgName": "download"
         },
         {
             "text": "ShowAll",
