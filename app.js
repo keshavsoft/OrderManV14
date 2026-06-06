@@ -25,5 +25,5 @@ setupRoutes(app);
 const { port } = startServer(app);
 
 if (process.env.OPEN_BROWSER === "true") {
-    exec(`start http://localhost:${port}/Tally/Masters/V8/index.html`);
+    exec(`start http://localhost:${port}/Tally/Masters/V9/index.html`);
 };
