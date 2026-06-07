@@ -1,6 +1,8 @@
 import { StartFunc as StartFuncValidateToken } from "../../Token/jwt/ValidateToken.js";
 
 let StartFunc = (req, res, next) => {
+    console.log("aaaaaa : ", req.cookies);
+
     if ("cookies" in req === false) {
         res.status(401).send({ message: 'cookies not found in request' });
         return;
@@ -26,4 +28,4 @@ let StartFunc = (req, res, next) => {
     next();
 };
 
-export { StartFunc };
+export default StartFunc;
