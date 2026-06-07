@@ -1,4 +1,9 @@
 async function ensureTailwind() {
+    if (document.getElementById("KSTableTailwind")) {
+        console.log("Tailwind loaded from Firefox Extension");
+        return;
+    };
+
     try {
         await loadCss("./tailwind-3.css");
 
@@ -8,10 +13,19 @@ async function ensureTailwind() {
 
     try {
         await loadCss(
-            "/tailwind-3.css"
+            "https://keshavsoft.github.io/KsWebExtension/tailwind-3.css"
         );
 
-        console.log("Tailwind loaded from GitHub CDN");
+        console.log("Tailwind loaded from GitHub CDN KsWebExtension");
+        return;
+    } catch { }
+
+    try {
+        await loadCss(
+            "https://keshavsoft.github.io/tailwind-gen-css/tailwind-3.css"
+        );
+
+        console.log("Tailwind loaded from GitHub CDN tailwind-gen-css");
         return;
     } catch { }
 
