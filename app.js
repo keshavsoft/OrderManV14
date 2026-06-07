@@ -11,6 +11,7 @@ import startServer from "./server.js";
 import { router as routerFromFromTally } from "./FromTally/routes.js";
 import { router as routerFromApi } from "./Api/routes.js";
 import { router as routerFromToTally } from "./ToTally/routes.js";
+import { router as routerFromSecured } from "./Secured/routes.js";
 
 loadConfig();
 
@@ -19,6 +20,7 @@ app.use("/ToTally", routerFromToTally);;
 
 app.use("/Api", routerFromApi);
 app.use("/FromTally", routerFromFromTally);
+app.use("/Secured", routerFromSecured);
 
 setupRoutes(app);
 
