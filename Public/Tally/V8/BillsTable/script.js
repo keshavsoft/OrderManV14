@@ -1,91 +1,107 @@
 async function ensureTailwind() {
+    function loadCss(href) {
+        return new Promise((resolve, reject) => {
+            const link = document.createElement("link");
+
+            link.rel = "stylesheet";
+            link.href = href;
+
+            link.onload = resolve;
+            link.onerror = reject;
+
+            document.head.appendChild(link);
+        });
+    };
+
+    const tryLocal = async () => {
+        try {
+            await loadCss("./tailwind-3.css");
+
+            console.log("Tailwind loaded locally");
+            return true;
+        } catch { return false; }
+    };
+
+    const tryKsWebExtension = async () => {
+        try {
+            await loadCss("https://keshavsoft.github.io/KsWebExtension/tailwind-3.css");
+
+            console.log("Tailwind loaded from KsWebExtension");
+            return true;
+        } catch { return false; }
+    };
+
+    const tryGit = async () => {
+        try {
+            await loadCss("https://keshavsoft.github.io/tailwind-gen-css/tailwind-3.css");
+
+            console.log("Tailwind loaded from tailwind-gen-css");
+            return true;
+        } catch { return false; }
+    };
+
     if (document.getElementById("KSTableTailwind")) {
         console.log("Tailwind loaded from Firefox Extension");
         return;
     };
 
-    try {
-        await loadCss("./tailwind-3.css");
-
-        console.log("Tailwind loaded locally");
-        return;
-    } catch { }
-
-    try {
-        await loadCss(
-            "https://keshavsoft.github.io/KsWebExtension/tailwind-3.css"
-        );
-
-        console.log("Tailwind loaded from GitHub CDN KsWebExtension");
-        return;
-    } catch { }
-
-    try {
-        await loadCss(
-            "https://keshavsoft.github.io/tailwind-gen-css/tailwind-3.css"
-        );
-
-        console.log("Tailwind loaded from GitHub CDN tailwind-gen-css");
-        return;
-    } catch { }
+    if (await tryLocal()) return;
+    if (await tryKsWebExtension()) return;
+    if (await tryGit()) return;
 
     throw new Error("Tailwind could not be loaded");
 };
 
-function loadCss(href) {
-    return new Promise((resolve, reject) => {
-        const link = document.createElement("link");
-
-        link.rel = "stylesheet";
-        link.href = href;
-
-        link.onload = resolve;
-        link.onerror = reject;
-
-        document.head.appendChild(link);
-    });
-};
-
-function loadScript(src) {
-
-    return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
-
-        script.src = src;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error(`Failed to load: ${src}`));
-
-        document.head.appendChild(script);
-    });
-};
-
 async function ensureKSTable() {
-    if (window.KSTable) {
+    function loadScriptAsModule(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+
+            script.src = src;
+            script.onload = () => resolve(true);
+            script.onerror = () => reject(new Error(`Failed to load: ${src}`));
+            script.type = "module";
+
+            document.head.appendChild(script);
+        });
+    };
+
+    function isKSTableLoaded() {
+        return !!window.KSTable;
+    };
+
+    async function tryGitHub() {
+        try {
+            const fromPromise = await loadScriptAsModule("https://keshavsoft.github.io/tailwind-table-dom/Public/v12/kstable.js");
+
+            console.log("KSTable loaded from Local Server");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    async function tryLocal() {
+        try {
+            const fromPromise = await loadScriptAsModule("/KSTable/v1/entry.js");
+
+            console.log("KSTable loaded from Local Server");
+
+            if (fromPromise) return true;
+        } catch { return false };
+
+        return false;
+    };
+
+    if (isKSTableLoaded()) {
         console.log("KSTable loaded from Firefox Extension");
         return;
     };
 
-    try {
-        console.log("before github");
-        await loadScript("https://keshavsoft.github.io/tailwind-table-dom/Public/v12/kstable.js");
-        console.log("after github");
+    if (await tryLocal()) return;
 
-        if (window.KSTable) {
-            console.log("KSTable loaded from GitHub CDN");
-            return;
-        }
-    } catch { }
-
-    try {
-        await loadScript("/KSTable/v10.js");
-
-        if (window.KSTable) {
-            console.log("KSTable loaded from Local Server");
-            return;
-        }
-    } catch (error) {
-        console.error(error);
-    };
+    if (await tryGitHub()) return;
 
     throw new Error("KSTable could not be loaded");
 };

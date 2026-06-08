@@ -4,6 +4,7 @@ import tallyStatus from "../../tallyStatus.js";
 
 const runAfterDomLoad = () => {
     import("../../../script.js").then();
+    // import("../../../loadJs.js").then();
 
     buildHeader().then(fromPromise => {
         jFLocalDisplayNonetoTallyId();
