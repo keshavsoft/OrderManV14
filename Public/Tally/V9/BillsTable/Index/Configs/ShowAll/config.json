@@ -1,0 +1,88 @@
+{
+    "containerId": "kSTableContainer",
+    "tableName": "",
+    "mode": "create",
+    "layout": {
+        "verticalPosition": "top",
+        "type": "table"
+    },
+    "endPoints": {
+        "create": "",
+        "update": "",
+        "delete": "/Api/V4/BillsTable/Delete",
+        "read": "/Api/V6/BillsTable/ShowAll",
+        "find": "",
+        "filter": "",
+        "dataLists": {}
+    },
+    "options": {
+        "firstRow": {
+            "showSearch": true
+        },
+        "enabledSections": [
+            "vertical",
+            "table",
+            "footer"
+        ],
+        "table": {
+            "showActions": true,
+            "serialWidth": "25px",
+            "optionsWidth": "100px",
+            "showSerial": true
+        }
+    },
+    "columnsConfig": [
+        {
+            "columnName": "LedgerName",
+            "title": "LedgerName",
+            "cellConfig": {
+                "width": "150px"
+            },
+            "isSearchable": false,
+            "dataListSource": "Dates.Date"
+        },
+        {
+            "columnName": "pk",
+            "title": "Invoice No.",
+            "cellConfig": {
+                "width": "100px"
+            },
+            "isSearchable": false,
+            "dataListSource": "AccountNames.AccountName"
+        },
+        {
+            "columnName": "GstRegistrationType",
+            "title": "Registration Type",
+            "cellConfig": {
+                "width": "100px"
+            }
+        },
+        {
+            "columnName": "PartyGSTIN",
+            "title": "GSTIN",
+            "cellConfig": {
+                "width": "100px",
+                "tableFooter": {}
+            }
+        },
+        {
+            "columnName": "InvoiceDate",
+            "title": "Date",
+            "cellConfig": {
+                "width": "100px"
+            }
+        },
+        {
+            "columnName": "insertedToTally",
+            "title": "insertedToTally",
+            "cellConfig": {
+                "width": "100px"
+            }
+        }
+    ],
+    "callbacks": {
+        "table": {
+            "onEdit": "func"
+        }
+    }
+}
