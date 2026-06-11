@@ -8,6 +8,15 @@
     },
     "items": [
         {
+            "text": "info",
+            "id": "LedgersHtmlId",
+            "icon": [],
+            "uiClasses": {
+                "aClass": ""
+            },
+            "svgName": "info",
+            "href": "../docs/index.html"
+        },{
             "text": "Ledgers",
             "id": "LedgersHtmlId",
             "icon": [],
