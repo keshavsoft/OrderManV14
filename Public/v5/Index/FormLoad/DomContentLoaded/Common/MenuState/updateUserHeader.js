@@ -1,4 +1,4 @@
-import getUserCode from "../../token/getUserCode.js";
+import getUserCode from "../AuthCookie/getUserCode.js";
 
 const updateUserHeader = () => {
     document
