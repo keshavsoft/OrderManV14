@@ -1,4 +1,4 @@
-import { clickFuncToRun } from "./clickFunc.js";
+import clickFuncToRun from "./clickFunc/index.js";
 
 const funcToRun = () => {
     const htmlElement = document.getElementById('loginButtonId');
