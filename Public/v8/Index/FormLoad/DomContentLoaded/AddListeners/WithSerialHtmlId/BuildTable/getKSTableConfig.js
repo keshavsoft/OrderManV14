@@ -1,4 +1,5 @@
 const onReadFail = (inResponseStatus) => {
+    console.log("onReadFail", inResponseStatus);
     const loginModal =
         document.getElementById("loginModal");
 
