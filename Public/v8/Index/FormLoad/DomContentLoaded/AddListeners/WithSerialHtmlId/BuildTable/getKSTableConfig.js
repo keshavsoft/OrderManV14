@@ -1,10 +1,4 @@
-const onReadFail = (inResponseStatus) => {
-    console.log("onReadFail", inResponseStatus);
-    const loginModal =
-        document.getElementById("loginModal");
-
-    loginModal.classList.remove("hidden");
-};
+import onReadFail from "../../../CommonFuncs/onReadFail.js";
 
 export const getKSTableConfig = async () => {
 

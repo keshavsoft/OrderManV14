@@ -65,5 +65,11 @@
                 "tableFooter": {}
             }
         }
-    ]
+    ],
+    "callbacks": {
+        "table": {
+            "onDelete": "function",
+            "onReadFail": "function"
+        }
+    }
 }
