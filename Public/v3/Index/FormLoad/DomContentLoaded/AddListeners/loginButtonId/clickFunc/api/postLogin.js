@@ -1,4 +1,4 @@
-import getLoginPayload from "./getLoginPayload.js";
+import getLoginPayload from "../credentials/getLoginPayload.js";
 
 const postLogin = async () => {
     return fetch("/Secured/V1/GenerateToken/ToCookie", {
