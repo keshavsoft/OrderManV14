@@ -43,7 +43,7 @@
             "icon": [],
             "uiClasses": {
                 "aClass": "",
-                "svgDivClass": "size-6",
+                "svgDivClass": "size-10",
                 "liClass": "md:text-left",
                 "isDisplayNone": true
             },

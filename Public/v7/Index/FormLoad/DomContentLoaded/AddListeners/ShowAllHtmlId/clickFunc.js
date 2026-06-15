@@ -4,7 +4,7 @@ const clickFuncToRun = ({ inCurrentTarget }) => {
     // console.log("inCurrentTarget : ", inCurrentTarget);
     applyActive({ inCurrentTarget });
     // inCurrentTarget.classList.add("active");
-debugger;
+
     buildTable().then();
 };
 

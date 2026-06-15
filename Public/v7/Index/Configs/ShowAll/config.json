@@ -10,7 +10,7 @@
         "create": "",
         "update": "",
         "delete": "",
-        "read": "/Api/V4/LedgerNames/ShowAll",
+        "read": "/Protected/V1/LedgerNames/ShowAll",
         "find": "",
         "filter": "",
         "dataLists": {}
